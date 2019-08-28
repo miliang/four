@@ -1,0 +1,271 @@
+*{
+    padding:0;
+    margin: 0;
+}
+/*=============背景图=================*/
+html{
+    width: 100%;
+    height: 1639px;
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*==============头部==================*/
+header{
+    position: relative;
+}
+/*=============banner====================*/
+img {
+    width: 100%;
+}
+/*============class为box的div=============*/
+.box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(42, 93, 68, 0.8);
+    top:0;
+}
+header>.box p{
+    position: absolute;
+    top:53%;
+    left: 46%;
+    font-size: 2.5rem;
+    margin: -16px 0 0 -65px;
+    color: white;
+    z-index: 3;
+}
+header>.box>img{
+    position: absolute;
+    width: 40%;
+    top:30%;
+    left:30%;
+    opacity: .3;
+}
+/*================积分==============*/
+header>.box span{
+   position: absolute;
+}
+.num{
+    font-size: 3.5em;
+    color: white;
+    top:60%;
+    left: 40%;
+}
+.score{
+    font-size: 1.8em;
+    top:64%;
+    left: 54%;
+    color: white;
+}
+/*=============按钮=============*/
+button{
+    position: absolute;
+}
+#btn{
+    width: 24.2%;
+    height: 60px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(255 , 153 , 2);
+    top:76%;
+    left:38.11%;
+    font-size: 2em;
+    font-weight: bold;
+    border: none;
+}
+.button{
+    width: 15%;
+    height: 45px;
+    color: white;
+    border: 1px solid silver;
+    border-radius: 10px;
+    background-color: rgba(53, 79, 63, 0.81);
+    top:89%;
+    left:69%;
+    font-size: 1.8em;
+}
+.box>.text{
+    top:93%;
+    left: 20%;
+    font-size: 1.8em;
+    color: silver;
+}
+
+
+/*==============内容==================*/
+section{
+    margin-top: 3%;
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    /*outline: 3px solid red;*/
+}
+.content{
+    width: 90%;
+    height: 90%;
+    /*outline: 5px solid salmon;*/
+    margin: 5%;
+}
+/*===========水平线===========*/
+hr{
+    position: absolute;
+    top:50%;
+    color: silver;
+    opacity: .5;
+}
+/*===========圆=============*/
+.circle{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px silver solid;
+    border-radius: 300px;
+    top:50%;
+    left:50%;
+    margin: -150px 0 0 -150px;
+    opacity: .5;
+}
+/*============内容的模糊层================*/
+section>.box{
+    position: absolute;
+    top:0;
+    width: 90%;
+    height:90%;
+    margin-left: 5%;
+    background-color: rgba(183, 235, 164, 0.5);
+}
+section>.box>p:first-child{
+    margin-top: 1%;
+    font-size:2.1em;
+    color: rgb(67, 104, 48);
+    text-align: center;
+}
+section>.box>.case{
+    /*outline: 2px solid slateblue;*/
+}
+section>.box>.case>div:first-child{
+    /*outline: 1px solid saddlebrown;*/
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #436830;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+section>.box>.case>div:last-child{
+    display: inline-block;
+    margin-left: 5%;
+}
+/*section>.box>.case>p{*/
+    /*margin-top: -3%;*/
+/*}*/
+/*=============图标=============*/
+i{
+    font-size: 60px;
+    color: white;
+    margin: 20px 0 0 20px;
+}
+section>.box>.case>div:last-child p:nth-child(1){
+    color: white;
+    display: inline-block;
+    font-size: 2em;
+}
+section>.box>.case>div:last-child p:nth-child(2){
+    font-size: 1.8em;
+    color: rgb(165 , 215 , 155);
+    margin-left: 2%;
+}
+/*==========class是box的div下的img=========*/
+section>.box>img{
+    width: 30%;
+    margin: 3% 0 0 36%;
+}
+/*===============活动规则===============*/
+.active{
+    letter-spacing: 5px;
+    color: #df910a;
+    margin: -39px  0 0 42%;
+    font-size: 2em;
+}
+/*=================文本框=============*/
+.last{
+    width: 90%;
+    margin:2% 0 0 5%;
+    font-size: 1.8em;
+    padding-top: 3%;
+    text-align: center;
+    color: rgb(153, 225, 194);
+}
+.last span{
+    display: block;
+}
+/*===========签到=================*/
+#casket{
+    position: absolute;
+    top:-20%;
+    width: 80%;
+    height: 700px;
+    left: 10%;
+    background-color: rgb(6 , 17 , 10);
+    color: white;
+    z-index: 4;
+    display: none;
+}
+#casket img{
+    margin-top: -300px;
+    margin-left: 27%;
+    width:50%;
+}
+#casket>i{
+    margin-left: 90%;
+}
+/*============签到成功============*/
+#casket>p:nth-child(3){
+    margin: -120px 0 0 40%;
+    font-size: 3em;
+    color: white;
+}
+/*============+10积分=========*/
+#casket>p:nth-child(4){
+    margin-top: 5%;
+    color: white;
+    font-size: 1.8em;
+    margin-left: -10%;
+}
+#casket>p:nth-child(4)>span{
+    font-size: 3em;
+    color: #f9a900;
+    margin-left: 45%;
+
+}
+/*===========连续签到========*/
+#casket>p:nth-child(5){
+    color: white;
+    font-size: 2em;
+    margin:2% 0 0 20%;
+}
+/*============参与答题=============*/
+#casket>p:nth-child(6){
+    color: #cccccc;
+    font-size: 1.8em;
+    margin: 4% 0 0 18%;
+}
+/*======按钮======*/
+#casket>button{
+    width: 60%;
+    height: 90px;
+    font-size: 3em;
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
+.top{
+    background-color: #ff8e02;
+    margin: 33% 0 0 20%;
+}
+.bottom{
+    background-color: #578034;
+    margin: 15% 0 0 20%;
+}

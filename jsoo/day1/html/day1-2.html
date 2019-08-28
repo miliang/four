@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*作用域*/
+    var a = 0;
+/*    function test() {
+        console.log(b);//undefined 打印空 不会报错 因为申明提前
+        var b = 1;
+//        console.log(b);//1
+    }
+    if(true){
+        let c = 2;//如果使用关键字let，那么在if这个花括号也代表域的概念
+    }
+    console.log(b);//会报错
+    console.log(c);//会报错
+    test()*/
+    function test1() {
+        a = 1;
+        console.log(a);//1
+    }
+    test1();
+    console.log(a);//1
+    console.log(window.a===a);//true
+//    var 变量 === window.变量
+    var x = function () {
+        console.log(3333);//3333
+    };
+    x();
+
+//    操作对象
+    function Person(){
+        this.age = 18;
+    }
+    var p1 = new Person();
+//    修改对象
+//    p1.age = 19;
+//    删除对象属性
+//    delete p1.age;
+//    console.log(p1);
+//    p1.name = 'zhangsan';
+//    console.log(p1.age);//undefined
+//    销毁对象
+//    p1 =null;
+    console.log(p1);//null      Person
+    Person.prototype.name = '张丹';
+//    判断属性是否属于这个实例
+//    p1有一个属性    age
+    console.log(p1.name);//张丹
+    if(p1.hasOwnProperty('name')){
+        test()
+    }else{
+        console.log('我属于自由');
+    }
+    function test() {
+        console.log('哈哈，我属于')
+    }
+//    instan ceof 判断实例化对象是否是这个构造函数创造出来的
+    console.log(p1 instanceof Array);//false
+
+    console.log(p1.__proto__===Person.prototype);//true
+</script>
+</body>
+</html>

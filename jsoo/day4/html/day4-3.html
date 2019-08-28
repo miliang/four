@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="300x300" id="input1">
+<input type="button" value="500x500" id="input2">
+<input type="button" value="700x700" id="input3">
+<img src="../images/12.jpg" id="img">
+<script>
+    //原来的方法
+   /* var imgNode = document.getElementById('img');
+    var input = document.getElementsByTagName('input');
+    for(var i=0;i<input.length;i++){
+        input[i].onclick = function () {
+            var inputValue = this.value;
+            var btnVal = inputValue.split('x');
+            imgNode.style.width = btnVal[0]+'px';
+            imgNode.style.height = btnVal[1]+'px';
+        }
+    }*/
+//使用桥接的方法
+//    改变大小的函数
+    function changeSize(btnvalue) {
+        var imgNode = document.getElementById('img');
+        var btnval = btnvalue.split('x');
+        var size = {
+            width:btnval[0],
+            height:btnval[1]
+        }
+        imgNode.style.width = size.width+'px';
+        imgNode.style.height = size.height+'px';
+    }
+//    专门添加事件的函数
+    function addEvent(id,eventName,fun) {
+        var input = document.getElementById(id);
+        if(eventName == 'click'){
+            input.onclick = function () {
+                fun(event);
+            }
+        }
+    }
+//    桥梁（桥接）
+    function changeSizeBridge() {
+        changeSize(e.srcElement.value);
+//        serElement是图片节点
+    }
+    addEvent('input1','click',changeSizeBridge);
+    addEvent('input2','click',changeSizeBridge);
+    addEvent('input3','click',changeSizeBridge);
+</script>
+</body>
+</html>

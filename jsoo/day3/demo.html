@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="myDiv"></div>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        var i=1;
+        function a() {
+            return i++;
+        }
+        var b=a();
+//        console.log(b);//没有return 显示undefined
+        console.log(b);// 1 先return在加减
+        console.log($);//函数的方法
+        console.log($());//对象的方法
+//        (function (){
+            var jQuery=function (){
+                function init() {
+
+                }
+            }
+//        })
+    </script>
+</body>
+</html>

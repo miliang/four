@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height:300px;
+            background-color: salmon;
+        }
+        .active{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id = "id" class = "box"></div>
+    <script src = "../js/demo.js"></script>
+    <script>
+        var $box = $('id');
+        $box.on('click',function () {
+            $box.addClass('active');
+        })
+    </script>
+</body>
+</html>

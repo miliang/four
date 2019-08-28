@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--用正则表达式验证电话号码、邮箱、身份证-->
+<input id = "myInput" type = "text" data-type = "id">
+<button onclick = "checkInputId()">按钮ID</button>
+<input id = "myInput1" type = "text" data-type = "phone">
+<button onclick = "checkInputPhone()">按钮Phone</button>
+<input id = "myInput2" type = "text" data-type = "email">
+<button onclick = "checkInputEmail()">按钮Phone</button>
+<script>
+//    原来的方法
+  /*  function checkInputId() {
+        let inputValue = document.getElementById(id).value;
+        let inputType = document.getElementById(id).getAttribute('data-type');
+        console.log(inputValue,inputType);
+        if(inputType == 'id'){
+            checkId(inputValue);
+        }else if(inputType == 'phone'){
+            checkPhone(inputValue);
+        }else if(inputType == 'email'){
+            checkEmail(inputValue)
+        }
+    }
+    function checkId() {
+
+    }
+    function checkPhone() {
+
+    }
+    function checkEmail(){
+
+    }
+    function checkQQ() {
+
+    }*/
+//  工厂模式
+//    要考虑一个易于拓展的方法
+//    需要把 id phone email 这些方法写成一个对象方法
+//    那么我们就要拓展这个对象的构造函数的原型对象
+    function checkInputId() {
+        let inputValue = document.getElementById('myInput').value;
+        let inputType = document.getElementById('myInput').getAttribute('data-type');
+        var msg = new msgFactory(inputValue,inputType);
+    }
+    function checkInputPhone() {
+        let inputValue = document.getElementById('myInput1').value;
+        let inputType = document.getElementById('myInput1').getAttribute('data-type');
+        var msg = new msgFactory(inputValue,inputType);
+
+        if(msg.err){
+            console.log('格式错误');
+        }else{
+            console.log(msg);
+        }
+    }
+    var msgFactory = function (value,type){
+//        在这里做个判断 new msgFactory() 和msgFactory()一样
+        if(this instanceof msgFactory){
+            return new this[type];
+        }else{
+            return new msgFactory(value,type);
+        }
+    }
+    msgFactory.prototype={//msgFactory的原型对象
+        email:function (value) {
+            console.log(`这是邮箱验证${value}`);
+            this.err = '邮箱格式不正确';
+        },
+        phone:function (value) {
+            console.log(`这是电话号码的验证${value}`);
+            this.err = '电话号码的格式不正确';
+        },
+        id:function (value) {
+            console.log(`这是身份证号的验证${value}`);
+            this.err = '身份证号的格式不正确';
+        }
+    }
+//    添加一个QQ号的验证
+    msgFactory.prototype.qq=function (value) {
+        console.log(`这是QQ号的验证${value}`);
+        this.err = 'QQ号的格式不正确';
+    }
+
+//    var body = document.getElementsByTagName('body')[0];
+//    var s=body.appendChild(document.createElement('div'));
+//    console.log(body);
+//    console.log(s);
+</script>
+</body>
+</html>

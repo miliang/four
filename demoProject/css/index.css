@@ -1,0 +1,524 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(228, 227, 209);
+    /*background-image: url("../images/bnner1.png");*/
+}
+/*row*/
+.row{
+    padding: 0;
+    margin: 0;
+}
+/*顶部*/
+ul li{
+    float: left;
+    list-style-type: none;
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    width: 100px;
+}
+#text{
+    width: 900px;
+    margin-left: 8.35%;
+    background-color: rgba(255, 255, 255, 0.56);
+}
+#text li{
+    border-right:1px solid black;
+    height: 32px;
+    line-height: 32px;
+}
+#text li:first-child{
+    width: 200px;
+}
+#icon{
+    width: 365px;
+    float: right;
+    margin-top: -3%;
+    padding-top: 4.5px;
+    background-color: rgba(255, 255, 255, 0.56);
+    margin-right: 8.35%;
+}
+#icon li{
+    width: 110px;
+    text-align: right;
+}
+/*手机图标*/
+.mobile{
+    font-size: 32px;
+    color: rgba(255, 0, 0, 0.49);
+}
+span{
+    color: rgba(255, 0, 0, 0.49);
+    margin-top: -10px;
+}
+/*微信、微博图标*/
+.wei{
+    font-size: 24px;
+    color: rgba(255, 0, 0, 0.49);
+}
+/*logo*/
+.logo{
+    margin-left: 6.5%;
+    width: 400px;
+}
+/*搜索框*/
+#input{
+    width: 340px;
+    margin-top: 30px;
+    margin-left: 35.6%;
+    border: 1px solid rgba(255, 0, 0, 0.49);
+    border-radius: 5px;
+}
+#input img{
+    margin-left: 48%;
+}
+#input~span{
+    font-size: 12px;
+    margin-top: .3%;
+    text-align: right;
+    margin-left: 25.5%;
+}
+/*导航*/
+.nav{
+    width: 84%;
+    margin:0  3.35%  0  8.35%;
+    height: 55px;
+    line-height: 55px;
+}
+.nav>ul{
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+}
+.nav>ul>li{
+    width: 18.5%;
+    height: 55px;
+    line-height: 55px;
+    font-family: "华文行楷";
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.72);
+}
+.nav>ul>li:first-child{
+    color: rgba(255, 0, 0, 0.49);
+}
+/*内容*/
+.section{
+    margin:0  8.5%  0  8.5%;
+    /*outline: 1px solid red;*/
+}
+.header{
+    background-color: white;
+    text-align: center;
+    position: relative;
+}
+/*轮播*/
+.banner img{
+    width: 102.6%;
+    margin-left: -1.3%;
+}
+/*底部文字*/
+.bottom{
+    position: absolute;
+    bottom: 0;
+    margin-left: 1.2%;
+    width: 97.7%;
+    /*outline: 1px solid salmon;*/
+    text-align: left;
+    height: 20px;
+    line-height: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.bottom p{
+    display: inline-block;
+    text-align: left;
+    color: white;
+    letter-spacing: 5px;
+}
+/*小圆点*/
+.circle{
+    color: white;
+}
+.bottom div{
+    display: inline;
+    margin-left: 65%;
+    letter-spacing: 5px;
+    /*outline: 1px solid skyblue;*/
+}
+/*旌阳要闻板块*/
+.news{
+    height: 275px;
+    /*outline: 1px solid darkblue;*/
+    margin-top: 1%;
+    background-color: white;
+}
+/*旌阳要闻左边的模块*/
+.news>.left{
+    height: 300px;
+}
+/*导航*/
+.news>.left>ul li{
+     width: 27%;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid black;
+}
+.news>.left>ul li:first-child{
+    width: 18%;
+    border-top: 2px solid rgba(255 ,0 ,0 ,0.49);
+    border-bottom: none;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    color: rgba(255, 0, 0, 0.49);
+}
+.news>.left>div{
+    display: inline-block;
+    height: 205px;
+    /*outline: 1px solid darkcyan;*/
+    clear: both;
+    padding-top: 1%;
+}
+#span{
+    clear: none;
+}
+#span p{
+    text-align: right;
+}
+
+.news>.left>div p{
+    margin-left: 5%;
+}
+.news>.left>div span{
+    color: black;
+}
+/*旌阳要闻右边的模块*/
+h4{
+    font-weight: normal;
+    font-size: 20px;
+    width: 100px;
+    text-align: center;
+    border-left: 4px solid rgba(255 ,0 ,0 ,0.49);
+    color: rgba(255, 0, 0, 0.49);
+    margin-left: 4.8%;
+}
+.right img{
+    margin-left: 5px;
+}
+.right p{
+    text-align: center;
+}
+/*政务服务板块*/
+.serves{
+    height: 310px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #2b3330;
+}
+.serves>h4{
+    margin-left: 2%;
+}
+.serves>.left{
+    /*outline: 1px solid red;*/
+}
+.serves>.left>ul li{
+    width: 25%;
+    text-align: left;
+    padding-left: 1.5%;
+}
+.serves>.left>ul li:first-child{
+    color: rgba(255, 0, 0, 0.49);
+}
+/*输入框*/
+.serves>.left>div{
+    width: 73%;
+    height: 30px;
+    clear: both;
+    margin-top: 5%;
+    background-color: rgba(255, 0, 0, 0.5);
+    border: 1px solid red;
+    margin-left: 1.5%;
+    border-radius: 5px;
+}
+.serves>.left>div>input{
+    width: 81%;
+    height: 30px;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    text-indent: 1em;
+}
+.search{
+    color: white;
+    font-size: 20px;
+    margin-left: 6%;
+}
+/*热点服务*/
+#hotServe{
+    width: 150px;
+    border: none;
+    font-size: 16px;
+    margin-left: -3%;
+}
+.serves>.left>table{
+    width: 85%;
+    /*outline: 1px solid darkcyan;*/
+    margin-left: 1.5%;
+}
+.serves>.left>table tr td{
+    height: 26px;
+}
+.serves>.left>table span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(78, 78, 78, 0.67);
+    text-align: center;
+    margin: 3px;
+    color: white;
+}
+#one{
+    background-color: #ff0000;
+}
+#two{
+    background-color: rgba(255, 0, 0, 0.7);
+}
+#three{
+    background-color: rgba(255, 89, 69, 0.89);
+}
+.serves>.left>table>tr td:last-child{
+    margin-left: 3%;
+}
+/*右边模块的左边模块*/
+.serves>.right>.left{
+    display: inline-block;
+    /*outline: 1px solid lavenderblush;*/
+}
+.serves>.right>.left>ul li{
+    width: 50%;
+}
+.serves>.right>.left>ul li:last-child{
+    color: rgba(255, 0, 0, 0.5);
+}
+.box{
+    width: 100%;
+    border:1px solid #686868;
+    clear: both;
+    border-top: 2px solid red;
+    padding: 0;
+    height: 221px;
+    margin-top: 4%;
+}
+.content{
+    display: inline-block;
+    height: 30px;
+    border: 1px solid silver ;
+    border-radius: 5px;
+    width: 45%;
+    margin: 15px  5px  5px 5px;
+}
+.content>span{
+    display: inline-block;
+    /*border-left: 1px solid black;*/
+    height: 30px;
+    line-height: 30px;
+    margin-top: 2%;
+    margin-left: 3%;
+    color: rgba(19, 19, 19, 0.86);
+}
+/*右边模块的右边*/
+/*.serves>.right>.right{*/
+    /*outline: 1px solid skyblue;*/
+/*}*/
+.serves>.right>.right>ul li:first-child{
+    color: rgba(255, 0, 0, 0.49);
+}
+/*小圆点*/
+.cir{
+    font-size: 1px;
+}
+.serves>.right>.right>div>table{
+    width:100%;
+    /*border: 1px solid white;*/
+}
+.serves>.right>.right>div>table tr{
+    width: 100%;
+    /*outline: 1px solid lightblue;*/
+}
+.serves>.right>.right>div>table tr td{
+    text-indent: 10px;
+    height:34px;
+    font-size: 16px;
+}
+/*访谈模块*/
+.talk{
+    background-color: #ffffff;
+    padding-top: 1%;
+}
+/*.talk>.left{*/
+    /*outline:1px solid lawngreen;*/
+/*}*/
+.talk>.left>h4{
+    margin-left: 2%;
+}
+.talk>.left>img{
+    margin-left: 0;
+}
+.talk>.left>div{
+    display: inline-block;
+    width:45%;
+    height: 150px;
+    padding-top: 5%;
+}
+.talk>.left>div h5{
+    display: inline-block;
+    width: 80px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.talk>.left>div p{
+    display: inline-block;
+    font-size: 13px;
+}
+/*政府信息模块*/
+.talk>.right{
+    /*outline:1px solid slateblue;*/
+}
+.talk>.right>h4{
+    width: 60%;
+    margin-left: 0;
+    text-align: left;
+    padding-left: 2%;
+}
+.talk>.right>table{
+    /*outline: 1px solid forestgreen;*/
+    width: 100%;
+}
+.talk>.right>ul{
+    /*outline:1px solid saddlebrown;*/
+}
+.talk>.right>ul li{
+    border: 1px solid #686868;
+    width: 45%;
+    height: 30px;
+    line-height:30px;
+    margin-bottom: 2%;
+}
+.talk>.right>ul li:last-child{
+    margin-left: 3%;
+}
+.talk>.right>ul li img{
+    margin-right: 10px;
+}
+/*专题模块*/
+.last{
+    padding: 1.5% 0 3% 0;
+    background-color: #ffffff;
+}
+.last>.title{
+    width: 2%;
+    height: 80px;
+    text-align: left;
+    padding-left:5px;
+    margin-left: 2.4%;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.last img{
+    margin-top: 5px;
+    margin-left: 1.17%;
+}
+/*脚部*/
+.foot_nav{
+    width: 83%;
+    margin: 2% 8.5% 0 8.5%;
+    /*outline: 1px solid #686868;*/
+    height: 22px;
+}
+.foot_nav>ul{
+    margin-left: 25%;
+    width: 70%;
+    height:22px;
+}
+.foot_nav>ul li{
+    width: 8%;
+    border-right:1px solid #131313;
+}
+.foot_nav>ul li:last-child{
+    border-right:none;
+}
+hr{
+    width: 80%;
+    margin-left: 8.5%;
+    position: absolute;
+    top:20%;
+}
+/*左边区域*/
+.foot>.left{
+    width:20%;
+    /*outline:1px solid darkgreen;*/
+    margin: 3% 0 0 25%;
+}
+.foot>.left img{
+    margin-left: 5%;
+    margin-right: 10%;
+}
+/*右边区域*/
+.foot>.right{
+    margin-top: 1%;
+    /*outline:1px solid #a6e1ec;*/
+}
+.foot>.right p{
+    text-align: left;
+}
+/*栅格化*/
+@media (min-width: 1200px) {
+    #text{
+        width: 54.7%;
+    }
+    #icon{
+        margin-top: -3.66%;
+        margin-left: .5%;
+    }
+    #input{
+        margin-left: 26%;
+    }
+    #input~span{
+        margin-left: 21%;
+    }
+    .serves>.left>div>input{
+        height: 28px;
+    }
+    .serves>.left>table tr td{
+        width: 56%;
+        height: 26px;
+        font-size: 13px;
+    }
+    .right img{
+        margin-left: 0;
+    }
+    .content>span{
+        font-size: 10px;
+    }
+    .talk>.left>div h5{
+        font-size: 12px;
+    }
+    .talk>.left>div p{
+        font-size: 11px;
+    }
+    .talk>.left>div{
+        padding: 3.5% 0 0 0;
+    }
+    .last>.title {
+        margin-left: 4%;
+    }
+    .last img{
+        width: 16.2%
+    }
+    .foot_nav>ul li{
+        width: 10%;
+    }
+}
+@media (min-width: 992px){
+
+}

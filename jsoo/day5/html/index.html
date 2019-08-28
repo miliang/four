@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<style>
+        #myId{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>-->
+</head>
+<body>
+<div class="mydiv"></div>
+<div class="mydiv"></div>
+<div class="mydiv"></div>
+<div class="mydiv"></div>
+<h1 id="myId">朝生暮死的是什么动物</h1>
+<script src="../js/index.js"></script>
+<script>
+    (function(){
+        var jQuery = function(selector){//申明一个方法
+            return new init(selector);//实例化对象
+        }
+        var init = function (selector) {//init构造函数
+            this.elements = [];//创建一个伪数组
+            var _this = this;//给局部变量定义一个全局变量
+            if(/^#/.test(selector)){//判断是什么选择器（id）
+                selector = selector.substring(1);//substring：是从下标的第几个往后取数
+                this.elements.push(document.getElementById(selector));//将获取到的节点放到定义了的叔祖里面
+            }else if(/^\./.test(selector)){
+                selector = selector.substring(1);
+                var className = document.getElementsByClassName(selector);
+                for(var i = 0;i<className.length;i++){
+                    this.elements.push(className[i]);
+                }
+            }
+            for(var key in this.elements){
+                this[key] = this.elements[key];
+            }
+            this.css = function (obj) {
+//                    console.log('我是css的方法');
+                if(arguments.length==1 && typeof arguments[0] == 'string'){
+                    //    获取样式
+//                    console.log("hah")
+                    return getCss(arguments[0]);
+                }else if(typeof arguments[0] == 'object'){
+                    //    设置样式
+//                    console.log("hah")
+                    return setCss(arguments[0]);
+                }else if(arguments.length == 2 && typeof arguments[0] == 'string'){
+                    return setCss();
+                }
+                function getCss(cssString) {//cssString是获取的节点
+                    for(var i = 0;i < _this.elements.length;i++){
+                        return _this.elements[i].style[cssString];
+
+                    }
+                }
+                function setCss(obj) {
+//                    console.log(obj)
+                    if(obj.constructor.name =='Object'){
+//                        console.log("jin")
+                        _this.elements.forEach(function (value) {
+                            for(var key in obj){
+                                value.style[key] = obj[key];
+//                                mydiv.style.border ="1px "
+                            }
+                        })
+                    }
+                    return _this;
+                }
+            }
+        }
+        jQuery.fn = init.prototype;
+
+        jQuery.fn.extend = function (obj) {
+            for(var key in obj){
+                jQuery.fn[key] = obj[key];
+            }
+        }
+        jQuery.extend = function (obj) {
+            for(var key in obj){
+                jQuery[key] = obj[key];
+            }
+        }
+        window.$ = jQuery;
+    })()
+    console.log($('.mydiv'));
+        $('.mydiv').css({
+            width:'100px',
+            height:'100px',
+            border:'1px solid pink'
+        }).css({
+            backgroundColor:'#cccccc'
+        })
+    $('#myId').css({
+        color:'gray'
+    })
+//        console.log($('.mydiv').css("border"))
+
+
+        $.extend({
+            ajax:function () {
+                console.log("我添加的ajax方法");
+            }
+        })
+        $.fn.extend({
+            sum:function (a,b) {
+                console.log(a+b);
+            }
+        })
+    $.ajax();
+    console.log($.ajax())
+    $('#myId').sum(5,6);
+
+</script>
+</body>
+</html>

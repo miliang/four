@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        #mydiv{
+            margin:5px;
+            width: 100%;
+            height: 600px;
+            float: left;
+            text-align: center;
+        }
+        figure{
+            width: 30%;
+            margin-left: 5px;
+            float: left;
+            /*outline: 1px solid #46edfa;*/
+        }
+        figure>img{
+            width: 100%;
+            margin-left: 20px;
+            outline: 2px solid dimgrey;
+            float: left;
+        }
+        .heart{
+            font-size: 24px;
+            color: rgba(252, 236, 231, 0.75);
+            /*border: 1px solid black;*/
+            margin-left: -15px;
+        }
+        .desc{
+            display: inline-block;
+            margin-left: 60px;
+        }
+        .desc>span:last-child{
+            margin-left: 30px;
+        }
+        .number{
+            font-size: 20px;
+            /*outline: 1px solid sandybrown;*/
+            margin-left: 120px;
+        }
+        .myclass{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="mydiv">
+        <figure>
+            <img src="../images/2.jpg" alt="">
+            <!--<span class="heart">♥</span> :class="className" -->
+            <my-btn @sumnum="demoSum"></my-btn>
+        </figure>
+        <figure>
+            <img src="../images/3.jpg" alt="">
+            <!--<span class="heart">♥</span>-->
+            <my-btn @sumnum="demoSum"></my-btn>
+        </figure>
+        <figure>
+            <img src="../images/4.jpg" alt="">
+            <!--<span class="heart">♥</span>-->
+            <my-btn @sumnum="demoSum"></my-btn>
+        </figure>
+        <figure>
+            <img src="../images/5.jpg" alt="">
+            <!--<span class="heart">♥</span>-->
+            <my-btn @sumnum="demoSum"></my-btn>
+        </figure>
+        <figure>
+            <img src="../images/6.jpg" alt="">
+            <!--<span class="heart">♥</span>-->
+            <my-btn @sumnum="demoSum"></my-btn>
+        </figure>
+        <figure>
+            <img src="../images/7.jpg" alt="">
+            <!--<span class="heart">♥</span>-->
+            <my-btn @sumnum="demoSum"></my-btn>
+        </figure>
+    <span class="number">总计数:{{countSum}}</span>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    Vue.component('my-btn',{
+        template:"\
+        <div class='desc'>\
+        <span  @click='countFun' :class='{myclass:istrue}' class='classN'>♥</span>\
+        <span>{{count}}</span>\
+        </div>",
+        data(){
+            return {
+                count:0
+            }
+        },
+        methods:{
+            countFun(){
+                this.istrue = !this.istrue;
+                if(this.istrue==true){
+                    this.count++
+                }else if(this.istrue==false){
+                    this.count--
+                }
+
+
+                this.$emit('sumnum')
+            }
+        },
+        propts:['className','classN']
+    })
+    var myapp = new Vue({
+        el:"#mydiv",
+        data:{
+            classN:'heart',
+            countSum:0,
+            istrue:true
+
+        },
+        methods:{
+            demoSum(){
+                this.countSum++
+            }
+        }
+    })
+</script>
+</body>
+</html>

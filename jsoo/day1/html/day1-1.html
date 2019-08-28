@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ /*   var zhanghao = 'zhangsan';
+    var pwd1 = 16;
+    var pwd2 = 12;
+    //    以前的做法
+    var arrStu = [zhanghao,zhanghao];
+    var arrAge = [pwd1,pwd2];
+//    再将arrStu里的数据与arrAge里的数据一一对应
+//    现在的做法
+    var user1 = {
+        zhanghao:'zhangsan',
+        pwd:16
+    }
+    var user2 = {
+        zhanghao:'lisisi',
+        pwd:12
+    }// 将账号和密码放在一个对象里，方便查找
+    var usserArr = [user1,user2];
+//    创建对象的方法
+    var obj = {name:'zhangsan'};//用字面量创建对象
+    var obj1 = new Object();
+    var obj2 = {name:'zhangsan'};
+    console.log(obj == obj2);//返回false  原因：地址不同
+    var obj = {name:'zhangsan'};
+    var obj1 = obj;
+    console.log(obj1.name);//zhangsan
+    console.log(obj.name);//zhangsan
+    obj1.name = 'wangwu';
+    console.log(obj1.name);//wangwu
+    console.log(obj.name);//wangwu  问：为什么obj.name会变成wangwu 原因：指向了同一个地址，引用数据类型（数组，object）存储在堆中
+
+    var num = 1;
+    var num1 = num;
+    console.log(num1);//1
+    num1 = 2;
+    console.log(num);//1  问：num=num1，为什么改变了num1的值，num没有改变  原因：num1的值是基本数据类型，存储在栈中，堆中没有和num的地址一致
+    console.log(num1);//2*/
+
+//    构造函数
+    function Student(name,age,className){
+        this.name = name;
+        this.age = age;
+        this.className = className;
+    }
+//    实例化
+    var stu1 = new Student('张三',17,'一班');
+    console.log(stu1.__proto__);//打印出stu1的原型对象(Object)
+ /* 原型对象的获得方法
+    1、通过实例化对象的__proto__得到
+    2、通过构造函数的prototype得到
+    */
+// 通过构造函数的prototype添加属性
+ Object.prototype.sex = '女';
+ Object.prototype.name = '赵丹';
+ Object.prototype.lol = '卢本伟凉了';
+var object = new Object();
+console.log(object.name);//赵丹
+console.log(object.sex);//女
+console.log(object.lol);//卢本伟凉了
+console.log(stu1.sex);//女
+console.log(stu1.name);//张三
+console.log(stu1.lol);//卢本伟凉了
+Student.prototype.lol = '帝师也凉了';
+function Plane() {
+    this.name = '飞机';
+    this.speed = 10000;
+}
+var pl = new Plane();
+console.log(pl.name);//飞机
+console.log(pl.sex);//女
+console.log(stu1.lol);//帝师也凉了 问：为什么不是“卢本伟凉了” 原因：从下往上找，就近原则
+Student.prototype = pl;//将pl设置成Student的原型对象
+var stu2 = new Student('张薇',18,'三班');
+console.log(stu1);//原型对象是Object
+console.log(stu2);//原型对象是pl
+console.log(stu2.speed);//10000
+
+</script>
+</body>
+</html>

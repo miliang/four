@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../css/index.css">
+<link rel="stylesheet" href="../css/font-awesome.css">
+<body>
+<!--头部-->
+<header>
+<!--banner图-->
+    <img src="../images/banner.png" alt="">
+    <div class="box">
+        <p>- 我的积分 -</p>
+        <img src="../images/case.png" alt="">
+        <span class="num">1200</span>
+        <span class="score">积分</span>
+        <button id="btn">签到领积分</button>
+        <p class="text">您已签到20天，继续保持，获得更多积分。</p>
+        <button class="button">积分换礼</button>
+    </div>
+</header>
+<!--内容-->
+<section>
+    <div class="content">
+        <hr style="size: 2px;width: 90%">
+        <div class="circle"></div>
+    </div>
+    <div class="box">
+        <p>———— 近一月积分明细 ————</p>
+        <div class="case">
+            <div>
+                <i class="fa fa-tablet tablet"></i>
+            </div>
+            <div>
+                <p>+10积分  于手机APP端签到</p>
+                <p>2018-05-19 22:30:12</p>
+            </div>
+
+        </div>
+        <div class="case">
+            <div>
+                <i class="fa fa-television television"></i>
+            </div>
+            <div>
+                <p>+10积分  于电视端签到</p>
+                <p>2018-05-19 22:30:12</p>
+            </div>
+
+        </div>
+        <div class="case">
+            <div>
+                <i class="fa fa-cogs cogs"></i>
+            </div>
+            <div>
+                <p>-600积分  积分兑换礼品成功</p>
+                <p>2018-05-19 22:30:12</p>
+            </div>
+
+        </div>
+        <div class="case">
+            <div>
+                <i class="fa fa-television television"></i>
+            </div>
+            <div>
+                <p>+10积分  于手机APP端签到</p>
+                <p>2018-05-19 22:30:12</p>
+            </div>
+
+        </div>
+        <div class="case">
+            <div>
+                <i class="fa fa-angle-double-down down"></i>
+            </div>
+            <div>
+                <p>更多积分明细</p>
+                <p>More...</p>
+            </div>
+        </div>
+        <img src="../images/title.png" alt="">
+        <p class="active">活动规则</p>
+        <p class="last">
+            <span>5月15日-7月15日，每天均可参与世界杯签到、每日答题。每</span>
+            <span>日签到获得：10积分；每日答题：每日三题，答对两道题及</span>
+            <span>以上得：20积分；所获积分可分别兑换JBL音响、家庭影院、</span>
+            <span>空气净化器、65寸电视机、俄罗斯双人游、视优荟抵用券、</span>
+            <span>现金大奖等。</span>
+        </p>
+    </div>
+    <div id="casket">
+        <img src="../images/icon.png">
+        <i class="fa fa-times"></i>
+        <p>签到成功</p>
+        <p><span>+10</span> 积分</p>
+        <p>您已连续签到20天，当前积分200分</p>
+        <p>您还可以参与每日答题与竞猜获取更多积分。</p>
+        <button class="top">参与每日答题</button>
+        <button class="bottom">参与赛果竞猜</button>
+    </div>
+</section>
+</body>
+<script src="../js/jquery-3.1.1.js"></script>
+<script>
+//   $("#btn").on("click",function (){
+//       $("#casket").style("color","green");
+//   })
+ var btn = document.getElementById("btn");
+btn.onclick= function () {
+    var casket = document.getElementById("casket");
+    casket.style.display = "block";
+    var icon = document.getElementsByClassName("fa-times")[0];
+    icon.onclick = function () {
+        casket.style.display = "none";
+    }
+
+}
+
+</script>
+</html>

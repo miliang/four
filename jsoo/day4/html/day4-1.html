@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--设置mydiv的样式-->
+    <style>
+        .mydiv {
+            background-color: salmon;
+            width:400px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick='myOpen()'>按钮一</button>
+    <button onclick='myOpen()'>按钮二</button>
+    <script>
+        /*原来的方法*/
+       /* function myOpen(){
+         var div=document.createElement('div');
+         //            给div添加class
+         div.className = 'mydiv';
+         //            将div添加到页面上去
+         document.body.appendChild(div);
+         }*/
+//            使用单例设计模式
+            var createDiv = (function () {
+                var div;
+                return function () {
+                    if(div == undefined){//如果没有div标签
+                        div = document.createElement('div');//创建div标签
+                        div.className = 'mydiv';//添加class
+                        document.body.appendChild(div);//将div添加到页面上
+                        div.onclick = function () {//单击时执行
+                            this.style.display = 'none';//将div先隐藏
+                        }
+                    }
+                    show(div);//调用show方法将参数div传进去
+//                    return div;//返回div
+                }
+            })();
+        function show(obj) {
+            obj.style.display = 'block';//将obj设置为显示
+        }
+        function myOpen() {
+            createDiv();//调用createDiv方法
+        }
+    </script>
+</body>
+</html>

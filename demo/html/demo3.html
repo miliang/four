@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative; /*因为里面的ul需要移动，所以外面一定要设置为相对定位*/
+            overflow: hidden;   /*不显示超出div部分的内容*/
+            margin: 20px;
+        }
+        div ul{
+            list-style: none;
+            position: absolute; /*ul需要移动，必须使用绝对定位*/
+            top: 0;
+            left: 0;
+            padding: 0 0 0 20px;
+        }
+        div ul li{
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <ul>
+        <li>习近平北海考察论古今：写好丝路新篇章</li>
+        <li>守护亿万民众精神家园 如何让网更能更强更安</li>
+        <li>3800亿:总理承诺的减税大礼包来了 国务院会议</li>
+        <li>官员瞒报个人家事家产被降职 两年内不得提拔</li>
+        <li>中国高铁明起首次跨省调价 哪些线路涨价了</li>
+        <li>天舟一号今日发射 首次挑战“零窗口”发射</li>
+        <li>特朗普：中国待我们这么好 你们还让我捅他刀子</li>
+        <li>车展最彪悍车型没人拒绝 国人造超级汽车赢遍全球</li>
+        <li>朝鲜晚会播导弹炸毁美国城市画面 星条旗被焚烧</li>
+        <li>白岩松和欧阳夏丹这两位主持人去中纪委干啥</li>
+        <li>中国海警船在广州撞货船沉没 曾在黄岩岛执法</li>
+        <li>“航母乌龙”令美政府难堪 白宫辩称受军方误导</li>
+        <li>大陆旅游脱团者张向忠离台 台当局:按规定办理</li>
+        <li>国产航母或4天后下水 配套新版歼15B舰载机曝光</li>
+        <li>好莱坞过气影星被抛弃赖中国 与达赖交往密切</li>
+        <li>“西单女孩”:经济好了1万倍 却想做从前的自己</li>
+        <li>俄罗斯男孩马路意外滑倒 恰好躲过行驶的车辆</li>
+        <li>深圳最壕烂尾别墅群:占地2万平 河南工资和房价表对比</li>
+    </ul>
+    <ul></ul>
+</div>
+</body>
+<script>
+    // 1. 获取需要移动的标签元素(ul)
+    // 2. 每隔一段时间往上移动
+    (function(){
+        var oUl = document.querySelector('ul');//获取多个里的第1个
+        var oDiv = document.querySelectorAll('div')[0];
+        var disTop = oUl.offsetHeight - oDiv.offsetHeight; // 移动最大范围的值
+        //document.querySelectorAll();//获取多个,返回nodeList(类似于数组(array)的使用)
+
+        // 使用元素往上移动
+        function moveUp(){
+            var s = 2;  // 移动的距离
+            if (oUl.offsetTop < -disTop){
+                oUl.style.top = '0px';
+            }
+
+            // 因为没有在html里设置过top，所以style.top只能取到一个没有长度的字符串
+            // 这里需要用offsetTop获取top的位置
+            oUl.style.top = oUl.offsetTop - s + 'px';
+        }
+
+        setInterval(moveUp, 10);
+    })();
+</script>
+</html>

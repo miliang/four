@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.half-circle{*/
+            /*width:200px;*/
+            /*height:150px;*/
+            /*overflow:hidden;*/
+        /*}*/
+        /*.inner-circle{*/
+            /*width:200px;*/
+            /*height:200px;*/
+            /*border-radius:50%;*/
+            /*background-color:purple;*/
+        /*}*/
+        .half-circle{
+            width:0px;
+            height:0px;
+            border-width:100px;
+            border-style:solid;
+            border-color:violet violet transparent transparent;
+            background-color:transparent;
+            transform:rotate(-45deg);
+            -webkit-transform:rotate(-45deg);
+            -moz-transform:rotate(-45deg);
+            -ms-transform:rotate(-45deg);
+            -o-transform:rotate(-45deg);
+            border-radius:50%;
+        }
+        div {
+            width: 5em;
+            height: 2em;
+            padding: 0.6em 0 0.2em 0;
+            /* 水平半径 = width/2, 垂直半径 = height + padding */
+            border-radius: 2.5em 2.5em 0 0/1.8em 1.8em 0 0;
+            background-color: #f29900;
+            color: #fff;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+    </style>
+<body>
+<div class="half-circle">
+    <div class="inner-circle">
+
+    </div>
+</div>
+<div class="half-circle">
+
+</div>
+<div>立即申请</div>
+</head>
+</body>
+</html>

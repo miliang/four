@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var tmp = new Date();
+//
+//    function f() {
+//        console.log(tmp);
+//        if (false) {
+//            var tmp = 'hello world';
+//        }
+//    }
+//
+//    f(); // undefined
+
+// IIFE 写法
+(function () {
+    var tmp = 'jisfif';
+console.log(tmp);
+}());
+
+// 块级作用域写法
+{
+    let tmp = [1,2,5];
+console.log(tmp)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <style>
+        #first>img{
+            width: 30%;
+            height:40%;
+            float: left;
+            margin-left:2%;
+        }
+        figcaption{
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            text-align: center;
+            width: 10%;
+            /*height:20%;*/
+           line-height: 80px;
+            /*padding-top: 20px;*/
+            color: aqua;
+            /*margin-top: -20%;*/
+        }
+        figcaption:hover{
+            border: 1px solid palevioletred;
+        }
+        #user{
+            left:45%
+        }
+        #music{
+            left: 75%;
+        }
+        #show{
+            width: 660px;
+            height: 960px;
+            position: relative;
+            text-align: center;
+            /*border:2px solid red;*/
+            overflow: hidden;
+            float: left;
+            display: none;
+        }
+        #prev,#next{
+            font-size: 60px;
+            display: inline-block;
+            position: absolute;
+            color: white;
+            left: 1.5%;
+            top:50%
+        }
+        #next{
+            left:91%
+        }
+        #close{
+            position: absolute;
+            font-size: 30px;
+            color: antiquewhite;
+            left:95.8%;
+        }
+    </style>
+</head>
+<body>
+    <figure id="first">
+        <img src="../images/1.jpg" alt="" onclick="changeSize(1)">
+        <figcaption id="person">个人主页</figcaption>
+        <img src="../images/2.jpg" alt="" onclick="changeSize(2)">
+        <figcaption id="user">用户</figcaption>
+        <img src="../images/3.jpg" alt="" onclick="changeSize(3)">
+        <figcaption id="music">音乐</figcaption>
+    </figure>
+    <figure id="show">
+        <div id="prev" onclick="imgPrev()"><</div>
+        <div id="next" onclick="imgNext()">></div>
+        <div id="close" onclick="winClose()">X</div>
+
+        <img id="img" src="../images/1.jpg" alt="">
+        <!--<img src="../images/2.jpg" alt="">-->
+        <!--<img src="../images/3.jpg" alt="">-->
+
+    </figure>
+    <script>
+//        window.onload=function () {
+//            var show=document.getElementById('show');
+//            var prev=document.getElementById('prev');
+//            var next=document.getElementById('next');
+//            function animate(offset) {
+//                var newLeft=parseInt(show.style.left)+offset;
+//                show.style.left=newLeft+'px';
+//            }
+//            prev.onclick=function () {
+//                animate(-660);
+//            }
+//            next.onclick=function () {
+//                animate(660)
+//            }
+//        }
+        var num=1;
+        var img=document.getElementById('img');
+        var figureFirst=document.getElementById('first');
+        var show=document.getElementById("show");
+        function imgPrev() {
+            num--;
+            if(num==0){
+                num=1;
+            }
+            img.src="../images/"+num+".jpg";
+            console.log(img.style.src)
+}
+        function imgNext() {
+            num++;
+            if(num==4){
+                num=3;
+            }
+            img.src="../images/"+num+".jpg";
+            console.log(img.style.src);
+        }
+        function winClose() {
+            show.style.display='none';
+          figureFirst.style.display='block';
+        }
+        function changeSize(num){
+            var imgs=document.getElementsByTagName('img');
+            console.log('imgs[0].src');
+//            var url=imgs[0].src.split('/');
+//            console.log(url);
+//            var s=url[url.length-1];
+//            console.log(url[url.length-2]);
+//            console.log(url[url.length-3]);
+//            console.log(url[2]);
+//            console.log(url[3]);
+//            console.log(url[4]);
+//            console.log(url[5]);
+//            console.log(s);
+//            var a=s.split('.');
+//            console.log(a[0])
+//            console.log(a[1])
+//            console.log("../"+(url[url.length-2]+"/"+a[0]+"."+a[1]))
+            for(var i=1;i<=imgs.length;i++){
+                figureFirst.style.display='none';
+                show.style.display='block';
+            }
+            img.src="../images/"+num+".jpg";
+        }
+    </script>
+    <!--<script src="../imgs.js"></script>-->
+    <!--<script>-->
+        <!--Q({-->
+            <!--name:'figure',-->
+            <!--url:'../images.1.jpg',-->
+            <!--id:'first',-->
+            <!--desc:'个人主页',-->
+            <!--f1:'imgPrev()',-->
+            <!--f2:'imgNext()',-->
+            <!--f3:'winClose()',-->
+            <!--f4:'changeSize()'-->
+        <!--})-->
+    <!--</script>-->
+</body>
+</html>
